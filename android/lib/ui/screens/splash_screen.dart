@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/asset_paths.dart';
+import '../../widgets/screen_background.dart';
 import 'sign_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     _moveToNextScreen();
   }
@@ -31,16 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SvgPicture.asset(
-            AssetPaths.backgroundSvg,
-            height: double.maxFinite,
-            width: double.maxFinite,
-            fit: BoxFit.cover,
-          ),
-          Center(child: Image.asset(AssetPaths.logoPng, width: 220)),
-        ],
+      body: ScreenBackground(
+        child: Center(child: Image.asset(AssetPaths.logoPng, width: 220)),
       ),
     );
   }
