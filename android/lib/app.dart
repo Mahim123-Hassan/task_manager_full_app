@@ -52,12 +52,12 @@ class TaskManagerApp extends StatelessWidget {
       ),
       //home: SplashScreen(),
       routes: <String,WidgetBuilder>{
-        '/':(_)=>SplashScreen(),
+        SplashScreen.name:(_)=>SplashScreen(),
         SignInScreen.name:(_)=>SignInScreen(),
-        SignUpScreen.name:(_)=>SignUpScreen()
+        SignUpScreen.name:(_)=>SignUpScreen(),
 
       },
-      initialRoute: "/",
+      initialRoute: SplashScreen.name,
     );
   }
 }

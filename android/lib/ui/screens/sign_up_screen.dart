@@ -72,8 +72,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
   void _onTapSignInButton() {
     Navigator.pop(context);
+
   }
-  void _onTapSignUpButton() {}
+  void _onTapSignUpButton() {
+
+  }
 
 
 }

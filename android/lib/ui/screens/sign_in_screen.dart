@@ -71,11 +71,13 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  void _onTapSignInButton() {}
+  void _onTapSignInButton() {
+
+  }
 
   void _onTapForgotPasswordButton() {}
 
   void _onTapSignUpButton() {
-    Navigator.pushReplacementNamed(context, SignUpScreen.name);
+    Navigator.pushNamed(context, SignUpScreen.name);
   }
 }
