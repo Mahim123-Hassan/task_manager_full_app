@@ -25,7 +25,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(height: 60),
               Text(
                 "Join With Us",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                style: TextTheme.of(context).titleLarge,
               ),
               SizedBox(height: 8),
 

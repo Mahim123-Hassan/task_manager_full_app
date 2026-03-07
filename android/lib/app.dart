@@ -48,6 +48,9 @@ class TaskManagerApp extends StatelessWidget {
             backgroundColor: Colors.green,
             foregroundColor: Colors.white,
           ),
+        ),
+        textTheme: TextTheme(
+            titleLarge:TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
         )
       ),
       //home: SplashScreen(),

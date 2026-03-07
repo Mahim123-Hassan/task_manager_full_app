@@ -25,7 +25,9 @@ class _SignInScreenState extends State<SignInScreen> {
               SizedBox(height: 60),
               Text(
                 "Get Started With",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+
+
               ),
               SizedBox(height: 8),
 
