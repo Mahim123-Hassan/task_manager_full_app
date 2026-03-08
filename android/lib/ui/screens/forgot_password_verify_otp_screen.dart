@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../widgets/screen_background.dart';
+import 'sign_in_screen.dart';
+import 'sign_up_screen.dart';
 
 class ForgotPasswordVerifyOtpScreen extends StatefulWidget {
   const ForgotPasswordVerifyOtpScreen({super.key});
@@ -40,6 +42,7 @@ class _ForgotPasswordVerifyOtpScreenState
 
               // TextFormField(decoration: InputDecoration(hintText: "Email")),
               PinCodeTextField(
+                keyboardType: TextInputType.number,
                 length: 6,
                 obscureText: false,
                 animationType: AnimationType.fade,
@@ -49,11 +52,12 @@ class _ForgotPasswordVerifyOtpScreenState
                   fieldHeight: 50,
                   fieldWidth: 40,
                   activeFillColor: Colors.white,
+                  inactiveFillColor: Colors.white,
+                  selectedFillColor: Colors.white,
                 ),
                 animationDuration: Duration(milliseconds: 300),
                 backgroundColor: Colors.transparent,
                 enableActiveFill: true,
-
 
                 appContext: context,
               ),
@@ -76,7 +80,7 @@ class _ForgotPasswordVerifyOtpScreenState
                       TextSpan(
                         style: TextStyle(color: Colors.green),
                         text: "Sign in",
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()..onTap = _onTapSignInButton,
                       ),
                     ],
                   ),
@@ -86,6 +90,14 @@ class _ForgotPasswordVerifyOtpScreenState
           ),
         ),
       ),
+    );
+  }
+
+  void _onTapSignInButton() {
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      SignInScreen.name,
+      (protected) => false,
     );
   }
 
