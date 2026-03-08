@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../widgets/screen_background.dart';
+import 'reset_password_screen.dart';
 import 'sign_in_screen.dart';
 import 'sign_up_screen.dart';
 
@@ -80,7 +81,8 @@ class _ForgotPasswordVerifyOtpScreenState
                       TextSpan(
                         style: TextStyle(color: Colors.green),
                         text: "Sign in",
-                        recognizer: TapGestureRecognizer()..onTap = _onTapSignInButton,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = _onTapSignInButton,
                       ),
                     ],
                   ),
@@ -101,5 +103,7 @@ class _ForgotPasswordVerifyOtpScreenState
     );
   }
 
-  void _onTapSubmitButton() {}
+  void _onTapSubmitButton() {
+    Navigator.pushNamed(context, ResetPasswordScreen.name);
+  }
 }
