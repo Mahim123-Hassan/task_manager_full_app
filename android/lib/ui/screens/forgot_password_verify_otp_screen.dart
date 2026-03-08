@@ -1,19 +1,20 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../widgets/screen_background.dart';
-import 'forgot_password_verify_otp_screen.dart';
 
-class ForgotPasswordEmailScreen extends StatefulWidget {
-  const ForgotPasswordEmailScreen({super.key});
-  static const String name = '/ForgotPasswordEmailScreen';
+class ForgotPasswordVerifyOtpScreen extends StatefulWidget {
+  const ForgotPasswordVerifyOtpScreen({super.key});
+  static const String name = "/ForgotPasswordVerifyOtpScreen";
 
   @override
-  State<ForgotPasswordEmailScreen> createState() =>
-      _ForgotPasswordEmailScreenState();
+  State<ForgotPasswordVerifyOtpScreen> createState() =>
+      _ForgotPasswordVerifyOtpScreenState();
 }
 
-class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
+class _ForgotPasswordVerifyOtpScreenState
+    extends State<ForgotPasswordVerifyOtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,16 +31,32 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
                   context,
                 ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
               ),
-              SizedBox(height: 8,),
+              SizedBox(height: 8),
               Text(
                 "A 6 digits verification OTP will be sent to your email address",
-                style: Theme.of(
-                  context,
-                ).textTheme.labelMedium,
+                style: Theme.of(context).textTheme.labelMedium,
               ),
               SizedBox(height: 8),
 
-              TextFormField(decoration: InputDecoration(hintText: "Email")),
+              // TextFormField(decoration: InputDecoration(hintText: "Email")),
+              PinCodeTextField(
+                length: 6,
+                obscureText: false,
+                animationType: AnimationType.fade,
+                pinTheme: PinTheme(
+                  shape: PinCodeFieldShape.box,
+                  borderRadius: BorderRadius.circular(5),
+                  fieldHeight: 50,
+                  fieldWidth: 40,
+                  activeFillColor: Colors.white,
+                ),
+                animationDuration: Duration(milliseconds: 300),
+                backgroundColor: Colors.transparent,
+                enableActiveFill: true,
+
+
+                appContext: context,
+              ),
 
               SizedBox(height: 8),
               FilledButton(
@@ -59,7 +76,7 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
                       TextSpan(
                         style: TextStyle(color: Colors.green),
                         text: "Sign in",
-                        recognizer: TapGestureRecognizer()..onTap = _onTapSignInButton,
+                        recognizer: TapGestureRecognizer()..onTap = () {},
                       ),
                     ],
                   ),
@@ -71,12 +88,6 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
       ),
     );
   }
-  void _onTapSubmitButton(){
-    Navigator.pushNamed(context, ForgotPasswordVerifyOtpScreen.name);
-  }
-  void _onTapSignInButton(){
-    Navigator.pop(context);
-  }
 
-
+  void _onTapSubmitButton() {}
 }
