@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'ui/screens/forgot_password_email_screen.dart';
 import 'ui/screens/forgot_password_verify_otp_screen.dart';
+import 'ui/screens/main_bottom_nav_holder_screen.dart';
 import 'ui/screens/reset_password_screen.dart';
 import 'ui/screens/sign_in_screen.dart';
 import 'ui/screens/sign_up_screen.dart';
@@ -55,7 +56,7 @@ class TaskManagerApp extends StatelessWidget {
         textTheme: TextTheme(
           titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           labelMedium: TextStyle(
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: FontWeight.w500,
             color: Colors.grey,
           ),
@@ -69,6 +70,7 @@ class TaskManagerApp extends StatelessWidget {
         ForgotPasswordEmailScreen.name: (_) => ForgotPasswordEmailScreen(),
         ForgotPasswordVerifyOtpScreen.name:(_)=>ForgotPasswordVerifyOtpScreen(),
         ResetPasswordScreen.name:(_)=>ResetPasswordScreen(),
+        MainBottomNavHolderScreen.name:(_)=>MainBottomNavHolderScreen(),
       },
       initialRoute: SplashScreen.name,
     );

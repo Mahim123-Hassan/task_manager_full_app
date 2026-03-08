@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/screen_background.dart';
 import 'forgot_password_email_screen.dart';
+import 'main_bottom_nav_holder_screen.dart';
 import 'sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -74,7 +75,9 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  void _onTapSignInButton() {}
+  void _onTapSignInButton() {
+    Navigator.pushNamed(context, MainBottomNavHolderScreen.name);
+  }
 
   void _onTapForgotPasswordButton() {
     Navigator.pushNamed(context, ForgotPasswordEmailScreen.name);
