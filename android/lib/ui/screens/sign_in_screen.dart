@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   void _onTapSignInButton() {
-    Navigator.pushNamed(context, MainBottomNavHolderScreen.name);
+    Navigator.pushReplacementNamed(context, MainBottomNavHolderScreen.name);
   }
 
   void _onTapForgotPasswordButton() {
