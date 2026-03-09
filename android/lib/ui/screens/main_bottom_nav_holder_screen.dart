@@ -12,9 +12,25 @@ class MainBottomNavHolderScreen extends StatefulWidget {
 }
 
 class _MainBottomNavHolderScreenState extends State<MainBottomNavHolderScreen> {
+  int _selectedIndex=0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: TMAppBar(), body: Column());
+    return Scaffold(appBar: TMAppBar(), 
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+          onDestinationSelected: (int index){
+          _selectedIndex=index;
+          setState(() {
+
+          });
+          },
+          destinations: [
+        NavigationDestination(icon: Icon(Icons.new_label_outlined), label: "New"),
+        NavigationDestination(icon: Icon(Icons.access_time), label: "progress"),
+        NavigationDestination(icon: Icon(Icons.cancel_outlined), label: "cancel"),
+        NavigationDestination(icon: Icon(Icons.done), label: "Completed"),
+      ]),
+   );
   }
 }
 
