@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'ui/screens/add_new_task_screen.dart';
 import 'ui/screens/forgot_password_email_screen.dart';
 import 'ui/screens/forgot_password_verify_otp_screen.dart';
 import 'ui/screens/main_bottom_nav_holder_screen.dart';
@@ -71,6 +72,7 @@ class TaskManagerApp extends StatelessWidget {
         ForgotPasswordVerifyOtpScreen.name:(_)=>ForgotPasswordVerifyOtpScreen(),
         ResetPasswordScreen.name:(_)=>ResetPasswordScreen(),
         MainBottomNavHolderScreen.name:(_)=>MainBottomNavHolderScreen(),
+        AddNewTaskScreen.name:(_)=>AddNewTaskScreen(),
       },
       initialRoute: SplashScreen.name,
     );

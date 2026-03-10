@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/task_card.dart';
+import 'add_new_task_screen.dart';
 
 class NewTaskListScreen extends StatefulWidget {
   const NewTaskListScreen({super.key});
@@ -36,10 +37,15 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _onTapAddNewTaskButton,
         child: Icon(Icons.add),
       ),
     );
+  }
+
+  void _onTapAddNewTaskButton(){
+    Navigator.pushReplacementNamed(context, AddNewTaskScreen.name);
+
   }
 
   SizedBox _buildTaskSummaryListView() {
