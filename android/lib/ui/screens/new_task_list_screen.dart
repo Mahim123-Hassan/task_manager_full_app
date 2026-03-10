@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/task_card.dart';
+
 class NewTaskListScreen extends StatefulWidget {
   const NewTaskListScreen({super.key});
 
@@ -11,56 +13,27 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        spacing: 8,
+      body: SingleChildScrollView(
+        child: Column(
+          spacing: 8,
 
-        children: [
-          SizedBox(),
-          _buildTaskSummaryListView(),
-          Expanded(
-            child: ListView.builder(
+          children: [
+            SizedBox(),
+            _buildTaskSummaryListView(),
+            ListView.separated(
+              itemCount: 10,
+              primary: false,
+              shrinkWrap: true,
+
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text("Title of task"),
-                  subtitle: Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      Text(
-                        "Description of the task",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Text("Date: 10 March 2026"),
-                      SizedBox(height: 8),
-                      Row(
-                        children: [
-                          Container(
-                            padding:EdgeInsets.symmetric(horizontal:16,vertical:4),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Text(
-                              "New",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          Spacer(),
-                          Icon(Icons.delete,color: Colors.red,),
-                          SizedBox(width: 20,),
-                          Icon(Icons.edit)
-                          
-                        ],
-                      ),
-                    ],
-                  ),
-                );
+                return taskcard();
+              },
+              separatorBuilder: (context, index) {
+                return SizedBox(height: 8);
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -71,6 +44,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
+
         itemBuilder: (context, index) {
           return Card(
             elevation: 0,
