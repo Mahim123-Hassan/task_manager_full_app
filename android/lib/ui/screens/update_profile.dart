@@ -15,7 +15,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TMAppBar(),
+      appBar: TMAppBar(fromUpdateProfile: true,),
       body: ScreenBackground(
         child: Padding(
           padding: const EdgeInsets.all(24),
