@@ -33,6 +33,5 @@ class _CompletedTaskListScreenState extends State<CompletedTaskListScreen> {
         ),
       ),
     );
-    ;
   }
 }

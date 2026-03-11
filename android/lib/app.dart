@@ -8,6 +8,7 @@ import 'ui/screens/reset_password_screen.dart';
 import 'ui/screens/sign_in_screen.dart';
 import 'ui/screens/sign_up_screen.dart';
 import 'ui/screens/splash_screen.dart';
+import 'ui/screens/update_profile.dart';
 
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
@@ -69,10 +70,12 @@ class TaskManagerApp extends StatelessWidget {
         SignInScreen.name: (_) => SignInScreen(),
         SignUpScreen.name: (_) => SignUpScreen(),
         ForgotPasswordEmailScreen.name: (_) => ForgotPasswordEmailScreen(),
-        ForgotPasswordVerifyOtpScreen.name:(_)=>ForgotPasswordVerifyOtpScreen(),
-        ResetPasswordScreen.name:(_)=>ResetPasswordScreen(),
-        MainBottomNavHolderScreen.name:(_)=>MainBottomNavHolderScreen(),
-        AddNewTaskScreen.name:(_)=>AddNewTaskScreen(),
+        ForgotPasswordVerifyOtpScreen.name: (_) =>
+            ForgotPasswordVerifyOtpScreen(),
+        ResetPasswordScreen.name: (_) => ResetPasswordScreen(),
+        MainBottomNavHolderScreen.name: (_) => MainBottomNavHolderScreen(),
+        AddNewTaskScreen.name: (_) => AddNewTaskScreen(),
+        UpdateProfile.name: (_) => UpdateProfile(),
       },
       initialRoute: SplashScreen.name,
     );

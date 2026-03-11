@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../ui/screens/update_profile.dart';
+
 class TMAppBar extends StatelessWidget implements PreferredSizeWidget{
   const TMAppBar({super.key});
 
@@ -10,27 +12,32 @@ class TMAppBar extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       leading: null,
       backgroundColor: Colors.green,
-      title: Row(
-        spacing: 12,
-        children: [
-          CircleAvatar(),
-          Column(
-            crossAxisAlignment: .start,
-            children: [
-              Text(
-                "Mahim Hassan",
-                style: textTheme.bodyMedium?.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+      title: GestureDetector(
+        onTap: (){
+          Navigator.pushNamed(context,UpdateProfile.name);
+        },
+        child: Row(
+          spacing: 12,
+          children: [
+            CircleAvatar(),
+            Column(
+              crossAxisAlignment: .start,
+              children: [
+                Text(
+                  "Mahim Hassan",
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              Text(
-                "hmahim951@gmail.come",
-                style: textTheme.bodyLarge?.copyWith(color: Colors.white),
-              ),
-            ],
-          ),
-        ],
+                Text(
+                  "hmahim951@gmail.come",
+                  style: textTheme.bodyLarge?.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
