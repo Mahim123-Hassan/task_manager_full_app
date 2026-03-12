@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/photo_picker.dart';
 import '../../widgets/screen_background.dart';
 import '../../widgets/tm_app_bar.dart';
 
@@ -26,6 +27,17 @@ class _UpdateProfileState extends State<UpdateProfile> {
               SizedBox(height: 60),
               Text("Update profile", style: TextTheme.of(context).titleLarge),
               SizedBox(height: 8),
+              Container(
+                height: 50,
+                width: .maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                child: GestureDetector(
+                  onTap: (){},
+                    child: photo_picker()),
+              ),
 
               TextFormField(decoration: InputDecoration(hintText: "Email")),
               TextFormField(
@@ -36,7 +48,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               TextFormField(decoration: InputDecoration(hintText: "Password")),
               SizedBox(height: 8),
               FilledButton(
-                onPressed: () {},
+                onPressed: _onTapUpdateButton,
                 child: Icon(Icons.arrow_circle_right_outlined),
               ),
 
@@ -47,3 +59,9 @@ class _UpdateProfileState extends State<UpdateProfile> {
     );
   }
 }
+void _onTapUpdateButton(){
+
+}
+
+
+
